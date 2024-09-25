@@ -1,0 +1,38 @@
+input_ids: torch.LongTensor = None,
+        attention_mask: Optional[torch.Tensor] = None,
+        decoder_input_ids: Optional[torch.LongTensor] = None,
+        decoder_attention_mask: Optional[torch.LongTensor] = None,
+        head_mask: Optional[torch.Tensor] = None,
+        decoder_head_mask: Optional[torch.Tensor] = None,
+        cross_attn_head_mask: Optional[torch.Tensor] = None,
+        encoder_outputs: Optional[List[torch.FloatTensor]] = None,
+        past_key_values: Optional[List[torch.FloatTensor]] = None,
+        inputs_embeds: Optional[torch.FloatTensor] = None,
+        decoder_inputs_embeds: Optional[torch.FloatTensor] = None,
+        labels: Optional[torch.LongTensor] = None,
+        use_cache: Optional[bool] = None,
+        output_attentions: Optional[bool] = None,
+        output_hidden_states: Optional[bool] = None,
+        return_dict: Optional[bool] = None,
+
+
+input_ids
+decoder_input_ids
+attention_mask
+decoder_inputs_embeds
+
+encoder_outputs is not used
+use_cache is True
+
+
+inputs_embeds dict_keys(['inputs_embeds', 'use_cache', 'attention_mask', 'encoder_outputs'])
+
+model_kwargs dict_keys(['inputs_embeds', 'use_cache', 'attention_mask', 'encoder_outputs', 'cache_position', 'past_key_values'])
+
+
+_update_model_kwargs_for_generation -> updates model_kwargs after generation of each step
+
+outputs = self(**model_inputs, return_dict=True) -> 3009
+
+prepare_inputs_for_generation
+
